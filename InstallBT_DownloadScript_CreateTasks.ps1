@@ -48,7 +48,7 @@ $onUnlockTrigger = New-CimInstance `
 $9amtrigger = New-ScheduledTaskTrigger -Daily -At 9AM
 $455pmtrigger = New-ScheduledTaskTrigger -Daily -At 4:55PM
 
-$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-NoProfile -WindowStyle Hidden -file "C:\Support\RestartReminder\RebootReminderNotification.ps1"'
+$action = New-ScheduledTaskAction -Execute 'Powershell.exe' -Argument '-ex bypass -NoProfile -WindowStyle Hidden -file "C:\Support\RestartReminder\RebootReminderNotification.ps1"'
 
 $principal = New-ScheduledTaskPrincipal -GroupID "BUILTIN\Users" -RunLevel Highest
 
