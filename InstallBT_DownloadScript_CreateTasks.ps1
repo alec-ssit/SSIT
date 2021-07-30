@@ -1,10 +1,4 @@
 ﻿# import BurntToast module
-if (Get-Module -ListAvailable -Name 'BurntToast') {
-    Import-Module -Name 'BurntToast'
-} else {
-    Install-Module BurntToast -Force
-}
-
 #Create directories. Download Script and Logo.
 if (-not (Test-Path "C:\Support")) {
 try {
@@ -54,6 +48,6 @@ $principal = New-ScheduledTaskPrincipal -GroupID "BUILTIN\Users" -RunLevel Highe
 
 Register-ScheduledTask -Action $action -Trigger $onUnlocktrigger -TaskName "RestartReminder at Unlock" -Description "Displays reminder to reboot at Workstation Unlock" -Principal $principal
 
-Register-ScheduledTask -TaskName "RestartReminder_915AM" -Action $action -Trigger $9amtrigger -Description "Displays reminder to reboot at 9:15AM" -Principal $principal
+Register-ScheduledTask -TaskName "RestartReminder_915AM" -Action $action -Trigger $9amtrigger -Description "Displays reminder to reboot at 9:00AM" -Principal $principal
 
 Register-ScheduledTask -TaskName "RestartReminder_455PM" -Action $action -Trigger $455pmtrigger  -Description "Displays reminder to reboot at 4:55PM" -Principal $principal
