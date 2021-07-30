@@ -1,4 +1,3 @@
-﻿# import BurntToast module
 #Create directories. Download Script and Logo.
 if (-not (Test-Path "C:\Support")) {
 try {
