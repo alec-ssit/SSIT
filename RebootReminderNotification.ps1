@@ -6,6 +6,6 @@ $days = ((get-date)-$lastboot).Days
 # display reminder if 7+ days since last reboot
 if ($days -ge 7) {
         $wshell = New-Object -ComObject Wscript.Shell
-        $wshell.Popup("It has been over 7 days since your PC was last restarted. Weekly Restarts are needed to ensure Business Critical Security Updates can process. Please Restart your PC ASAP.",0,"Restart PC ASAP",0)
+        $wshell.Popup("It has been over 7 days since your PC was last restarted. Weekly Restarts are needed to ensure Business Critical Security Updates can process. Please Restart your PC ASAP.",0,"Windows Security",0)
         }
 return $true
